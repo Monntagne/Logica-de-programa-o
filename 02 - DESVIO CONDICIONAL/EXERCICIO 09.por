@@ -1,52 +1,42 @@
 programa
 {
-	
 	funcao inicio()
 	{
-		real hr_extra, salario_base, salario_total, hr_trabalhada, valor_hr_trabalhada 
-		hr
+		real hr_semana, salario_mensal_base, salario_semanal_base, valor_hora, valor_hora_extra, hr_extra_semana, salario_semana_total, salario_mes_total
 
+		escreva("Quantas horas voce trabalhou na semana? ")
+		leia(hr_semana)
 
+		escreva("Qual seu salario mensal base (160h)? ")
+		leia(salario_mensal_base)
 
-		se (hr_trabalhada >160){
-			hr_extra = hr_trabalhada-160
-		}senao(hr_trabalhada<=160){
-			hr_trabalhada = hr_trabalhada
+		valor_hora = salario_mensal_base / 160
+		valor_hora_extra = valor_hora * 1.5
+		salario_semanal_base = valor_hora * 40
+
+		se (hr_semana > 40) {
+			hr_extra_semana = hr_semana - 40
+			salario_semana_total = salario_semanal_base + (hr_extra_semana * valor_hora_extra)
+		} senao {
+			hr_extra_semana = 0
+			salario_semana_total = hr_semana * valor_hora
 		}
+
+		salario_mes_total = salario_semana_total * 4
+
+		escreva("\nValor da hora: R$", valor_hora)
+		escreva("\nHoras extras na semana: ", hr_extra_semana)
+		escreva("\nSalario semanal total: R$", salario_semana_total)
+		escreva("\nSalario mensal total (4 semanas): R$", salario_mes_total)
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-A jornada de trabalho semanal de um funcionário é de 40 horas. 
-
-
-O funcionário quetrabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. 
-
-
-Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do
-funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas).
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 127; 
+ * @POSICAO-CURSOR = 122; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
